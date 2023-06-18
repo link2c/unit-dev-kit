@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+/components
+/packages
+/plugins
+/hooks
+/bin
+dist
+pnpm-lock.yaml
+yarn.lock
+*.log

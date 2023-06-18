@@ -1,0 +1,68 @@
+{
+  "name": "unit-dev-kit",
+  "version": "0.0.2",
+  "description": "适用于REACT框架的业务开发工具套",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "components",
+    "packages",
+    "plugins",
+    "hooks"
+  ],
+  "main": "./packages/index.js",
+  "types": "./packages/index.d.ts",
+  "module": "./packages/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./packages/index.js",
+      "import": "./packages/index.mjs",
+      "types": "./packages/index.d.ts"
+    },
+    "./components": {
+      "require": "./components/index.js",
+      "import": "./components/index.mjs",
+      "types": "./components/index.d.ts"
+    },
+    "./plugins": {
+      "require": "./plugins/index.js",
+      "import": "./plugins/index.mjs",
+      "types": "./plugins/index.d.ts"
+    },
+    "./hooks": {
+      "require": "./hooks/index.js",
+      "import": "./hooks/index.mjs",
+      "types": "./hooks/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "test": "vitest run",
+    "latest": "rm -rf yarn.lock pnpm-lock.yaml node_modules/ && pnpm i",
+    "prepublishOnly": "pnpm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@egoist/prettier-config": "1.0.0",
+    "@types/node": "^18.15.5",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.9",
+    "esbuild": "^0.15.13",
+    "prettier": "2.5.1",
+    "react": "18.2.0",
+    "tsup": "6.4.0",
+    "typescript": "4.5.4",
+    "vite": "^4.0.0",
+    "vitest": "0.24.5"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.24",
+    "vite": "^3.2.5",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "react-dom": "^18.2.0"
+  }
+}
